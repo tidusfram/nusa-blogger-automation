@@ -1,0 +1,378 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 3339 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 1 / 6) Tj ET
+BT /F2 15 Tf 0.06 0.13 0.22 rg 42 762 Td (E-BOOK PANDUAN LENGKAP PENGGUNAAN & OTOMASI) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 738 Td (Nusa Blogger Automation - Windows 11 Enterprise Edition \(AI Auto Publish & Auto Update\)) Tj ET
+0.90 0.97 0.94 rg
+42 714 510 16 re f
+0.06 0.52 0.44 rg
+42 714 3 16 re f
+BT /F2 9 Tf 0.04 0.32 0.27 rg 50 718 Td (Pembaruan Terkini: Dilengkapi Fitur Auto-Refresh Token Permanen \(Bebas Expire 1 Jam\)) Tj ET
+0.06 0.36 0.35 rg
+42 687 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 690 Td (BAB 1 - CARA MEMBUKA & MENJALANKAN APLIKASI DI WINDOWS 11) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 673 Td (Aplikasi desktop Anda berwujud file executable \(.exe\) mandiri berkapasitas 188 MB.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 660 Td (Aplikasi dapat langsung dijalankan tanpa perlu proses instalasi yang rumit.) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 639 Td (A. Membuka File Aplikasi \(.exe\):) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 625 Td (1. Buka File Explorer di komputer Windows 11 Anda.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 612 Td (2. Kunjungi alamat folder berikut:) Tj ET
+0.94 0.96 0.98 rg
+42 595 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 599 Td (C:\\Users\\ASROCK\\.gemini\\antigravity\\scratch\\nusa-blogger-automation\\release\\win-unpacked) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 583 Td (3. Klik dua kali \(Double-Click\) pada file: Nusa Blogger Automation.exe) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 570 Td (4. Tips Praktis: Klik kanan file tersebut -> Send to -> Desktop \(create shortcut\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 557 Td (   agar ikon aplikasi Nusa Blogger selalu muncul di layar Desktop Anda.) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 536 Td (B. Menjalankan Mode Pengembang \(Developer Live Reload via PowerShell\):) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 522 Td (Jika ingin menjalankan dari kode sumber dengan fitur live reload saat coding:) Tj ET
+0.94 0.96 0.98 rg
+42 505 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 509 Td (cd C:\\Users\\ASROCK\\.gemini\\antigravity\\scratch\\nusa-blogger-automation) Tj ET
+0.94 0.96 0.98 rg
+42 489 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 493 Td (npm run dev) Tj ET
+0.06 0.36 0.35 rg
+42 463 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 466 Td (BAB 2 - ARSITEKTUR KEAMANAN & MANAJEMEN DATABASE) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 449 Td (1. Database SQLite Lokal WAL: Tersimpan di komputer Anda dengan 16 tabel relasional.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 436 Td (   Lokasi database: %APPDATA%\\nusa-blogger-automation\\data\\nusa_blogger.db) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 423 Td (2. Enkripsi AES-256-GCM: Seluruh API Key OpenAI, Google OAuth Access Token,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 410 Td (   Refresh Token, dan Client Secret dienkripsi militer sebelum masuk database.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 397 Td (3. Job Lock & Idempotency: Mencegah eksekusi ganda pada jadwal otomatis yang sama.) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3871 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 2 / 6) Tj ET
+0.06 0.36 0.35 rg
+42 754 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 757 Td (BAB 3 - KONFIGURASI KREDENSIAL AI \(OPENAI\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 740 Td (Sebelum membuat atau merevisi konten, hubungkan AI Engine terlebih dahulu:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 727 Td (1. Buka menu 'Settings' pada bagian paling bawah sidebar kiri.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 714 Td (2. Masukkan OpenAI API Key Anda \(kunci diawali dengan sk-proj-...\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 701 Td (3. Pilih Model AI: gpt-4o-mini \(rekomendasi: sangat cepat & hemat biaya\) atau gpt-4o.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 688 Td (4. Tentukan Batas Skor Minimum Quality Gate \(standar: 75 dari 100\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 675 Td (5. Klik tombol 'Simpan Pengaturan AI'. Kunci Anda langsung terenkripsi AES-256-GCM.) Tj ET
+0.06 0.36 0.35 rg
+42 648 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 651 Td (BAB 4 - PANDUAN LENGKAP AUTO-REFRESH PERMANEN \(BEBAS EXPIRE 1 JAM\)) Tj ET
+0.99 0.95 0.93 rg
+42 630 510 16 re f
+0.91 0.30 0.24 rg
+42 630 3 16 re f
+BT /F2 9 Tf 0.72 0.18 0.14 rg 50 634 Td (PENTING: Google secara bawaan membatasi Access Token hanya aktif 1 jam \(3600 detik\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 617 Td (Jika hanya memasukkan Access Token biasa, token akan mati setiap 60 menit dan memicu) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 604 Td (error 401 \(Invalid Credentials\). Agar aktif selamanya tanpa perlu diganti lagi,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 591 Td (gunakan fitur baru: '¡ Solusi 2: Auto-Refresh Permanen' di menu Blogger Accounts.) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 570 Td (Langkah-Langkah Mengaktifkan Auto-Refresh Selamanya \(Cukup Sekali\):) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 556 Td (1. Buka menu 'Blogger Accounts' di sidebar kiri aplikasi Nusa Blogger.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 543 Td (2. Masukkan Email Akun Google Anda: contoh bangsalmu@gmail.com) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 530 Td (3. Pada kotak hijau 'Solusi 2: Auto-Refresh Permanen', masukkan 3 data berikut:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 517 Td (   a. Google Cloud Client ID \(disalin dari Google Cloud Console -> Credentials\):) Tj ET
+0.94 0.96 0.98 rg
+42 500 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 504 Td (      588669488177-nf5er8gqqph7ocg7jc2a8c0uik1jnnh8.apps.googleusercontent.com) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 488 Td (   b. Google Cloud Client Secret \(disalin dari Google Cloud Console\):) Tj ET
+0.94 0.96 0.98 rg
+42 471 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 475 Td (      GOCSPX-...) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 459 Td (   c. Google OAuth 2.0 Refresh Token \(disalin dari OAuth Playground Step 2\):) Tj ET
+0.94 0.96 0.98 rg
+42 442 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 446 Td (      1//04MVBX8zNG_... \(kode permanen yang tidak pernah kedaluwarsa\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 430 Td (4. Klik tombol hijau: '+ Simpan Akun & Kredensial'.) Tj ET
+0.90 0.97 0.94 rg
+42 407 510 16 re f
+0.06 0.52 0.44 rg
+42 407 3 16 re f
+BT /F2 9 Tf 0.04 0.32 0.27 rg 50 411 Td (Hasil: Akun Anda akan berstatus '¡ Auto-Refresh Aktif'. Sistem otomatis memperbarui token.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 394 Td (Sistem aplikasi akan memperpanjang token akses secara transparan di latar belakang) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 381 Td (setiap kali token habis, tanpa Anda perlu membuka Google Playground lagi!) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4102 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 3 / 6) Tj ET
+0.06 0.36 0.35 rg
+42 754 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 757 Td (BAB 5 - PANDUAN 3 MESIN UTAMA \(DETECTION, REVISION & PUBLISHING\)) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 738 Td (1. MESIN 1: DETECTION ENGINE \(Menu: Detection Engine & SEO Analyzer\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 724 Td (Menganalisis seluruh artikel yang ada di blog untuk mencari artikel yang perlu diupdate.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 711 Td (- Algoritma mendeteksi 5 poin: \(a\) Referensi tahun usang \(misal 2021-2023\), \(b\) Jumlah kata) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 698 Td (  di bawah standar, \(c\) Ketiadaan alt text gambar & internal link, \(d\) Skor SEO, dan \(e\) Duplikasi.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 685 Td (- Status Keputusan Deteksi:) Tj ET
+0.94 0.96 0.98 rg
+42 668 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 672 Td (No Update Required        -> Artikel masih bagus & relevan \(dilewati\)) Tj ET
+0.94 0.96 0.98 rg
+42 652 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 656 Td (Update Recommended        -> Mengandung tahun/fakta usang \(harus direvisi AI\)) Tj ET
+0.94 0.96 0.98 rg
+42 636 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 640 Td (SEO Optimization Required -> Struktur heading/meta belum lengkap \(revisi SEO\)) Tj ET
+0.94 0.96 0.98 rg
+42 620 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 624 Td (Content Revision Required -> Konten terlalu pendek/tipis \(perlu penambahan\)) Tj ET
+0.94 0.96 0.98 rg
+42 604 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 608 Td (Manual Review Required    -> Ditemukan kemiripan teks >80% atau klaim sensitif) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 584 Td (2. MESIN 2: AI REVISION ENGINE \(Menu: AI Revision Engine\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 570 Td (Merevisi artikel lama dengan prinsip Anti-Halusinasi & Standar E-E-A-T Google:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 557 Td (- Memperbarui konteks waktu ke tahun terkini tanpa mengarang fakta sembarangan.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 544 Td (- Menyusun ulang heading H2 & H3 logis dan menambahkan FAQ terstruktur.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 531 Td (- Melengkapi seluruh gambar dengan atribut alt deskriptif kaya kata kunci.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 518 Td (- Menautkan internal link ke artikel lain di blog yang sama secara otomatis.) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 497 Td (3. QUALITY GATE: 10 PEMERIKSAAN KELAYAKAN WAJIB SEBELUM PUBLISH) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 483 Td (1. Fact Verification: Memastikan klaim data sesuai sumber terpercaya \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 470 Td (2. Content Accuracy: Memastikan tahun & statistik diperbarui akurat \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 457 Td (3. Search Intent: Memastikan gaya tulisan sesuai intensi pembaca.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 444 Td (4. SEO Quality: Minimal ada 2x H2, 1x H3, dan meta description optimal.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 431 Td (5. Grammar: Tata bahasa Indonesia baku dan mengalir profesional.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 418 Td (6. Duplicate Content: Jaccard similarity maksimal 65% terhadap artikel lain \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 405 Td (7. HTML Validation: Tag HTML tertutup rapat dan bebas skrip jahat \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 392 Td (8. Internal Link Validation: Memastikan URL internal link valid \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 379 Td (9. URL Preservation: Memastikan permalink dan Post ID tidak berubah \(Kritis\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 366 Td (10. Change Detection: Perubahan minimal 10% agar pembaruan bermakna \(Kritis\).) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 4349 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 4 / 6) Tj ET
+0.06 0.36 0.35 rg
+42 754 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 757 Td (BAB 6 - MESIN 3: PUBLISHING ENGINE \(UPDATE IN-PLACE KE BLOGSPOT\)) Tj ET
+0.90 0.97 0.94 rg
+42 736 510 16 re f
+0.06 0.52 0.44 rg
+42 736 3 16 re f
+BT /F2 9 Tf 0.04 0.32 0.27 rg 50 740 Td (GARANSI SISTEM: DILARANG MEMBUAT POST BARU & DILARANG MENGUBAH URL PERMALINK) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 723 Td (Banyak blogger pemula merusak SEO karena menghapus artikel lama dan membuat URL baru.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 710 Td (Publishing Engine Nusa Blogger memiliki aturan ketat:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 697 Td (1. Mengambil konten live Blogger via API dan menyimpan Snapshot Cadangan otomatis.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 684 Td (2. Melakukan PATCH in-place pada blogger_post_id yang sama persis.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 671 Td (3. Mempertahankan tanggal terbit asli \(published date\) dan struktur permalink URL.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 658 Td (4. Melakukan verifikasi ulang setelah publish untuk memastikan konten sudah live.) Tj ET
+0.06 0.36 0.35 rg
+42 631 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 634 Td (BAB 7 - AUTO PUBLISH ARTIKEL BARU DARI KATA KUNCI TARGET) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 617 Td (Selain merevisi artikel lama, aplikasi bisa menulis artikel baru dari nol secara otomatis:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 604 Td (1. Buka menu 'Keyword Manager' -> Masukkan kata kunci \(misal: 'Wisata Kuliner Jakarta'\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 591 Td (2. Pilih Search Intent: Informational, Commercial, atau Transactional.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 578 Td (3. Buka menu 'AI Article Writer' atau 'Auto Publisher' -> Klik 'Generate & Publish'.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 565 Td (4. AI menyusun artikel lengkap \(>1000 kata\), meta deskripsi, ilustrasi banner SVG,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 552 Td (   mengevaluasi Quality Gate, lalu menerbitkan artikel baru ke Blogspot via POST.) Tj ET
+0.06 0.36 0.35 rg
+42 525 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 528 Td (BAB 8 - MASTER TOMBOL: ¶ JALANKAN PIPELINE OTOMATIS) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 511 Td (Di pojok kanan atas aplikasi terdapat tombol hijau sakti: '¶ Jalankan Pipeline Otomatis'.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 498 Td (Cukup 1 kali klik, sistem akan mengeksekusi 10 tahap secara berurutan:) Tj ET
+0.94 0.96 0.98 rg
+42 481 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 485 Td (Tahap 1: Sinkronisasi artikel terbaru dari Blogspot \(Blogger API v3\)) Tj ET
+0.94 0.96 0.98 rg
+42 465 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 469 Td (Tahap 2: Detection Engine memindai seluruh artikel di database lokal) Tj ET
+0.94 0.96 0.98 rg
+42 449 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 453 Td (Tahap 3: Menentukan kandidat artikel usang yang membutuhkan pembaruan) Tj ET
+0.94 0.96 0.98 rg
+42 433 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 437 Td (Tahap 4: AI Revision Engine membuat draf revisi lengkap dengan FAQ & SEO) Tj ET
+0.94 0.96 0.98 rg
+42 417 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 421 Td (Tahap 5: Quality Gate menguji 10 parameter kelayakan artikel) Tj ET
+0.94 0.96 0.98 rg
+42 401 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 405 Td (Tahap 6: Backup Snapshot disimpan otomatis sebelum perubahan diterapkan) Tj ET
+0.94 0.96 0.98 rg
+42 385 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 389 Td (Tahap 7: Publishing Engine melakukan PATCH in-place ke Blogspot) Tj ET
+0.94 0.96 0.98 rg
+42 369 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 373 Td (Tahap 8: Verifikasi konten online pada server Google Blogger) Tj ET
+0.94 0.96 0.98 rg
+42 353 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 357 Td (Tahap 9: Mencatat riwayat ke Update Reports & Activity Logs) Tj ET
+0.94 0.96 0.98 rg
+42 337 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 341 Td (Tahap 10: Memperbarui timer jadwal berikutnya pada Scheduler) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 3477 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 5 / 6) Tj ET
+0.06 0.36 0.35 rg
+42 754 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 757 Td (BAB 9 - OTOMASI TERJADWAL \(SCHEDULER - ASIA/JAKARTA WIB\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 740 Td (Aplikasi dilengkapi mesin penjadwal otomatis dengan 8 tugas bawaan:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 727 Td (- 06:00 WIB: Auto Sync Artikel Blogspot      - 10:00 WIB: Auto Publish Artikel Baru) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 714 Td (- 07:00 WIB: Auto Detection Artikel Lama     - 13:00 WIB: Auto SEO Audit Berkala) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 701 Td (- 08:00 WIB: Auto AI Revision Engine         - 15:00 WIB: Auto Verification Postingan) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 688 Td (- 09:00 WIB: Auto Update ke Blogspot         - 01:00 WIB: Auto Backup Database) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 675 Td (Setiap tugas dilengkapi kuota pembaruan harian \(misal: maks 10 update/hari\) dan) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 662 Td (batas artikel per batch untuk mencegah spam dan menjaga reputasi domain blog.) Tj ET
+0.06 0.36 0.35 rg
+42 635 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 638 Td (BAB 10 - SOLUSI ALTERNATIF BEBAS TOKEN & API) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 621 Td (Bila Anda ingin alternatif praktis tanpa berurusan dengan Google Cloud API sama sekali:) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 600 Td (A. Fitur Resmi Blogger: Posting Lewat Email Rahasia \(Mail-to-Blogger\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 586 Td (1. Buka dashboard Blogger Anda: Setelan \(Settings\) -> Email -> Posting menggunakan email.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 573 Td (2. Buat alamat email rahasia, misal: namablog.rahasia123@blogger.com.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 560 Td (3. Pilih opsi 'Segera publikasikan email'.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 547 Td (4. Setiap kali AI selesai merevisi artikel, sistem cukup mengirimkan konten via email,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 534 Td (   dan artikel seketika langsung terbit di Blogspot Anda tanpa API selamanya!) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 513 Td (B. Ekspor File XML Blogger \(Sekali Impor Puluhan Artikel\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 499 Td (1. Biarkan AI merevisi artikel dan menyimpannya di database lokal aplikasi.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 486 Td (2. Buka dashboard Blogger -> Setelan -> Kelola Blog -> Impor Konten.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 473 Td (3. Masukkan file XML hasil ekspor. Puluhan artikel langsung terbit dalam hitungan detik.) Tj ET
+0.06 0.36 0.35 rg
+42 446 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 449 Td (BAB 11 - ROLLBACK & PEMULIHAN SATU-KLIK) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 432 Td (Jika hasil update ingin dibatalkan:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 419 Td (1. Buka menu 'Update History' -> Cari artikel yang bersangkutan.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 406 Td (2. Klik tombol merah 'Rollback ke Versi Ini'.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 393 Td (3. Konten asli Blogspot langsung dipulihkan kembali ke server dengan URL tetap utuh.) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 3948 >>
+stream
+0.06 0.36 0.35 rg
+40 792 515 28 re f
+BT /F2 10 Tf 1 1 1 rg 52 802 Td (E-BOOK PANDUAN PENGGUNAAN - NUSA BLOGGER AUTOMATION) Tj ET
+BT /F1 9 Tf 0.85 0.95 0.92 rg 490 802 Td (Hal. 6 / 6) Tj ET
+0.06 0.36 0.35 rg
+42 754 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 757 Td (BAB 12 - PANDUAN REFERENSI BERGAMBAR \(SCREENSHOT\)) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 740 Td (Dokumen HTML interaktif bergambar lengkap tersedia di dalam folder docs aplikasi:) Tj ET
+0.94 0.96 0.98 rg
+42 723 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 727 Td (File: ...\\nusa-blogger-automation\\docs\\PETUNJUK_BERGAMBAR.html) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 711 Td (Buka file di atas di browser Google Chrome / Microsoft Edge untuk melihat petunjuk visual:) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 690 Td (Daftar Gambar Panduan yang Disematkan:) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 676 Td (1. Gambar 01: Dashboard Utama - Menampilkan 10 kartu statistik, status zona waktu WIB,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 663 Td (   dan tombol sakti '¶ Jalankan Pipeline Otomatis' di sudut kanan atas.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 650 Td (2. Gambar 02: Menu Settings - Lokasi pengisian OpenAI API Key \(sk-proj-...\) dan) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 637 Td (   pemilihan model AI \(gpt-4o-mini / gpt-4o\) serta skor Quality Gate.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 624 Td (3. Gambar 03: OAuth Playground Step 1 - Memilih scope Blogger API v3:) Tj ET
+0.94 0.96 0.98 rg
+42 607 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 611 Td (   https://www.googleapis.com/auth/blogger) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 595 Td (4. Gambar 04: OAuth Playground Step 2 - Lokasi menyalin Refresh Token \(1//04...\) dan) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 582 Td (   tombol 'Refresh access token'.) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 569 Td (5. Gambar 05: Google Cloud Console - Lokasi Client ID dan Client Secret \(GOCSPX-\).) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 556 Td (6. Gambar 06: Blog Management - Menampilkan daftar blogspot aktif Anda \(blackphoneva,) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 543 Td (   isholidays\) serta tombol 'Sync Artikel Blogger'.) Tj ET
+0.06 0.36 0.35 rg
+42 516 4 14 re f
+BT /F2 11.5 Tf 0.06 0.36 0.35 rg 52 519 Td (BAB 13 - LOKASI FILE & DIREKTORI PENTING DI WINDOWS 11) Tj ET
+BT /F1 9.5 Tf 0.15 0.20 0.28 rg 42 502 Td (Seluruh data dan aset aplikasi Anda tersimpan aman di direktori berikut:) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 481 Td (1. File Aplikasi Executable:) Tj ET
+0.94 0.96 0.98 rg
+42 463 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 467 Td (C:\\Users\\ASROCK\\.gemini\\antigravity\\scratch\\nusa-blogger-automation\\release\\win-unpacked\\Nusa Blogger Automation.exe) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 443 Td (2. Database SQLite Utama \(Data Artikel, Log, Akun & Jadwal\):) Tj ET
+0.94 0.96 0.98 rg
+42 425 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 429 Td (C:\\Users\\ASROCK\\AppData\\Roaming\\nusa-blogger-automation\\data\\nusa_blogger.db) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 405 Td (3. Folder Cadangan Otomatis \(Backups\):) Tj ET
+0.94 0.96 0.98 rg
+42 387 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 391 Td (C:\\Users\\ASROCK\\AppData\\Roaming\\nusa-blogger-automation\\data\\backups\\) Tj ET
+BT /F2 10 Tf 0.12 0.18 0.28 rg 42 367 Td (4. Panduan Visual Bergambar:) Tj ET
+0.94 0.96 0.98 rg
+42 349 510 15 re f
+BT /F2 8.5 Tf 0.08 0.25 0.38 rg 48 353 Td (C:\\Users\\ASROCK\\.geminiantigravity\\scratch\\nusa-blogger-automation\\docs\\PETUNJUK_BERGAMBAR.html) Tj ET
+0.90 0.97 0.94 rg
+42 327 510 16 re f
+0.06 0.52 0.44 rg
+42 327 3 16 re f
+BT /F2 9 Tf 0.04 0.32 0.27 rg 50 331 Td (Selamat Menggunakan Nusa Blogger Automation! Otomasi blogging Blogspot Anda kini aktif 24/7.) Tj ET
+0.88 0.91 0.94 rg 40 38 515 1 re f
+BT /F1 8.5 Tf 0.45 0.52 0.60 rg 42 25 Td (Nusa Blogger Automation v1.0 Enterprise - Windows 11 Desktop - Zona Waktu Asia/Jakarta WIB) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000149 00000 n 
+0000000246 00000 n 
+0000000348 00000 n 
+0000003739 00000 n 
+0000003875 00000 n 
+0000007798 00000 n 
+0000007934 00000 n 
+0000012088 00000 n 
+0000012225 00000 n 
+0000016627 00000 n 
+0000016765 00000 n 
+0000020295 00000 n 
+0000020433 00000 n 
+0000024434 00000 n 
+trailer
+<< /Size 17 /Root 1 0 R >>
+startxref
+24572
+%%EOF

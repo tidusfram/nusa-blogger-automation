@@ -1,0 +1,333 @@
+// Nusa Blogger Automation — Prisma Schema
+// Supports PostgreSQL (Production Team Server) and SQLite (Local Desktop Storage)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Workspace {
+  id               String            @id @default(uuid())
+  name             String
+  createdAt        DateTime          @default(now()) @map("created_at")
+  users            User[]
+  workspaceMembers WorkspaceMember[]
+  googleAccounts   GoogleAccount[]
+  blogs            Blog[]
+  keywords         Keyword[]
+  articles         Article[]
+  mediaAssets      MediaAsset[]
+  automationJobs   AutomationJob[]
+  schedules        Schedule[]
+  aiSettings       AiSetting[]
+  updateReports    UpdateReport[]
+
+  @@map("workspaces")
+}
+
+model User {
+  id               String            @id @default(uuid())
+  workspaceId      String            @map("workspace_id")
+  displayName      String            @map("display_name")
+  email            String
+  role             String            @default("editor") // owner | admin | editor | viewer
+  status           String            @default("active") // active | invited | disabled
+  createdAt        DateTime          @default(now()) @map("created_at")
+  workspace        Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceMembers WorkspaceMember[]
+
+  @@unique([workspaceId, email])
+  @@map("users")
+}
+
+model WorkspaceMember {
+  id          String    @id @default(uuid())
+  workspaceId String    @map("workspace_id")
+  userId      String    @map("user_id")
+  role        String    @default("editor") // owner | admin | editor | viewer
+  permissions String    @default("[]") @map("permissions_json")
+  joinedAt    DateTime  @default(now()) @map("joined_at")
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([workspaceId, userId])
+  @@map("workspace_members")
+}
+
+model GoogleAccount {
+  id                    String    @id @default(uuid())
+  workspaceId           String    @map("workspace_id")
+  email                 String
+  displayName           String?   @map("display_name")
+  tokenReference        String?   @map("token_reference")
+  encryptedAccessToken  String?   @map("encrypted_access_token")
+  encryptedRefreshToken String?   @map("encrypted_refresh_token")
+  tokenExpiresAt        String?   @map("token_expires_at")
+  scopes                String    @default("https://www.googleapis.com/auth/blogger")
+  status                String    @default("disconnected") // connected | disconnected | expired
+  createdAt             DateTime  @default(now()) @map("created_at")
+  workspace             Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blogs                 Blog[]
+
+  @@map("google_accounts")
+}
+
+model Blog {
+  id              String          @id @default(uuid())
+  workspaceId     String          @map("workspace_id")
+  googleAccountId String?         @map("google_account_id")
+  bloggerBlogId   String          @map("blogger_blog_id")
+  name            String
+  url             String?
+  status          String          @default("active")
+  lastSyncedAt    String?         @map("last_synced_at")
+  createdAt       DateTime        @default(now()) @map("created_at")
+  workspace       Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  googleAccount   GoogleAccount?  @relation(fields: [googleAccountId], references: [id], onDelete: SetNull)
+  settings        BlogSetting?
+  keywords        Keyword[]
+  articles        Article[]
+  mediaAssets     MediaAsset[]
+  automationJobs  AutomationJob[]
+  schedules       Schedule[]
+  updateReports   UpdateReport[]
+
+  @@unique([workspaceId, bloggerBlogId])
+  @@map("blogs")
+}
+
+model BlogSetting {
+  id                    String   @id @default(uuid())
+  blogId                String   @unique @map("blog_id")
+  language              String   @default("id")
+  targetAudience        String   @default("Pembaca Indonesia") @map("target_audience")
+  writingTone           String   @default("profesional, informatif, terpercaya") @map("writing_tone")
+  minQualityScore       Int      @default(75) @map("min_quality_score")
+  autoPublishEnabled    Boolean  @default(true) @map("auto_publish_enabled")
+  autoUpdateEnabled     Boolean  @default(true) @map("auto_update_enabled")
+  maxDailyUpdates       Int      @default(10) @map("max_daily_updates")
+  maxBatchSize          Int      @default(5) @map("max_batch_size")
+  preservePublishDate   Boolean  @default(true) @map("preserve_publish_date")
+  internalLinkingActive Boolean  @default(true) @map("internal_linking_active")
+  updatedAt             DateTime @default(now()) @map("updated_at")
+  blog                  Blog     @relation(fields: [blogId], references: [id], onDelete: Cascade)
+
+  @@map("blog_settings")
+}
+
+model Keyword {
+  id          String    @id @default(uuid())
+  workspaceId String    @map("workspace_id")
+  blogId      String?   @map("blog_id")
+  keyword     String
+  intent      String?   // informational | commercial | transactional | navigational
+  priority    Int       @default(3)
+  status      String    @default("queued") // queued | processing | used | skipped
+  createdAt   DateTime  @default(now()) @map("created_at")
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog        Blog?     @relation(fields: [blogId], references: [id], onDelete: SetNull)
+  articles    Article[]
+
+  @@map("keywords")
+}
+
+model Article {
+  id                   String            @id @default(uuid())
+  workspaceId          String            @map("workspace_id")
+  blogId               String            @map("blog_id")
+  keywordId            String?           @map("keyword_id")
+  bloggerPostId        String?           @map("blogger_post_id")
+  title                String
+  contentHtml          String?           @map("content_html")
+  metaDescription      String?           @map("meta_description")
+  labelsJson           String            @default("[]") @map("labels_json")
+  permalink            String?
+  url                  String?
+  status               String            @default("draft") // draft | queued | published | update_pending | failed | archived
+  detectionStatus      String            @default("No Update Required") @map("detection_status")
+  updateDecision       String            @default("Tidak update") @map("update_decision")
+  priorityScore        Int               @default(0) @map("priority_score")
+  qualityScore         Int               @default(0) @map("quality_score")
+  seoScore             Int               @default(0) @map("seo_score")
+  contentHash          String?           @map("content_hash")
+  publishedAt          String?           @map("published_at")
+  lastSyncedAt         String?           @map("last_synced_at")
+  lastDetectedAt       String?           @map("last_detected_at")
+  lastUpdatedAtBlogger String?           @map("last_updated_at_blogger")
+  createdAt            DateTime          @default(now()) @map("created_at")
+  updatedAt            DateTime          @default(now()) @map("updated_at")
+  workspace            Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog                 Blog              @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  keyword              Keyword?          @relation(fields: [keywordId], references: [id], onDelete: SetNull)
+  revisions            ArticleRevision[]
+  mediaAssets          MediaAsset[]
+  automationJobs       AutomationJob[]
+  updateReports        UpdateReport[]
+  sourceReferences     SourceReference[]
+
+  @@unique([blogId, bloggerPostId])
+  @@map("articles")
+}
+
+model ArticleRevision {
+  id                   String   @id @default(uuid())
+  articleId            String   @map("article_id")
+  revisionNumber       Int      @map("revision_number")
+  oldTitle             String?  @map("old_title")
+  newTitle             String?  @map("new_title")
+  oldContent           String?  @map("old_content")
+  newContent           String?  @map("new_content")
+  oldMetaDescription   String?  @map("old_meta_description")
+  newMetaDescription   String?  @map("new_meta_description")
+  changeSummary        String?  @map("change_summary")
+  seoAnalysisJson      String   @default("{}") @map("seo_analysis_json")
+  qualityGateJson      String   @default("{}") @map("quality_gate_json")
+  qualityScore         Int      @default(0) @map("quality_score")
+  updateRecommendation String?  @map("update_recommendation")
+  appliedToBlogger     Boolean  @default(false) @map("applied_to_blogger")
+  isBackupSnapshot     Boolean  @default(false) @map("is_backup_snapshot")
+  createdAt            DateTime @default(now()) @map("created_at")
+  article              Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@map("article_revisions")
+}
+
+model MediaAsset {
+  id          String    @id @default(uuid())
+  workspaceId String    @map("workspace_id")
+  blogId      String?   @map("blog_id")
+  articleId   String?   @map("article_id")
+  fileName    String    @map("file_name")
+  mimeType    String    @default("image/svg+xml") @map("mime_type")
+  url         String
+  altText     String    @map("alt_text")
+  caption     String?
+  sourceType  String    @default("ai_generated") @map("source_type")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog        Blog?     @relation(fields: [blogId], references: [id], onDelete: SetNull)
+  article     Article?  @relation(fields: [articleId], references: [id], onDelete: SetNull)
+
+  @@map("media_assets")
+}
+
+model AutomationJob {
+  id             String    @id @default(uuid())
+  workspaceId    String    @map("workspace_id")
+  blogId         String?   @map("blog_id")
+  articleId      String?   @map("article_id")
+  jobType        String    @map("job_type") // generate | publish | update | sync | audit | detect | revise | backup | verify
+  status         String    @default("pending") // pending | processing | completed | failed | cancelled | skipped
+  idempotencyKey String?   @unique @map("idempotency_key")
+  lockedBy       String?   @map("locked_by")
+  lockedAt       String?   @map("locked_at")
+  scheduledAt    String?   @map("scheduled_at")
+  attempts       Int       @default(0)
+  maxAttempts    Int       @default(3) @map("max_attempts")
+  lastError      String?   @map("last_error")
+  resultJson     String    @default("{}") @map("result_json")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  workspace      Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog           Blog?     @relation(fields: [blogId], references: [id], onDelete: SetNull)
+  article        Article?  @relation(fields: [articleId], references: [id], onDelete: SetNull)
+  logs           JobLog[]
+
+  @@map("automation_jobs")
+}
+
+model Schedule {
+  id               String    @id @default(uuid())
+  workspaceId      String    @map("workspace_id")
+  blogId           String?   @map("blog_id")
+  name             String
+  taskType         String    @map("task_type") // auto_sync | auto_detection | auto_revision | auto_publish | auto_update | auto_seo_audit | auto_backup | auto_verification
+  cronExpression   String    @default("0 */6 * * *") @map("cron_expression")
+  frequencyMinutes Int       @default(360) @map("frequency_minutes")
+  executionTime    String    @default("08:00") @map("execution_time")
+  timezone         String    @default("Asia/Jakarta")
+  maxBatchSize     Int       @default(5) @map("max_batch_size")
+  maxDailyUpdates  Int       @default(10) @map("max_daily_updates")
+  minPriorityScore Int       @default(50) @map("min_priority_score")
+  apiQuotaLimit    Int       @default(100) @map("api_quota_limit")
+  retryLimit       Int       @default(3) @map("retry_limit")
+  enabled          Boolean   @default(true)
+  lastRunAt        String?   @map("last_run_at")
+  nextRunAt        String?   @map("next_run_at")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  workspace        Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog             Blog?     @relation(fields: [blogId], references: [id], onDelete: SetNull)
+
+  @@map("schedules")
+}
+
+model JobLog {
+  id        String        @id @default(uuid())
+  jobId     String        @map("job_id")
+  level     String        @default("info") // info | warn | error
+  message   String
+  createdAt DateTime      @default(now()) @map("created_at")
+  job       AutomationJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("job_logs")
+}
+
+model AiSetting {
+  id               String    @id @default(uuid())
+  workspaceId      String    @unique @map("workspace_id")
+  provider         String    @default("openai")
+  model            String    @default("gpt-4o-mini")
+  encryptedApiKey  String?   @map("encrypted_api_key")
+  temperature      Float     @default(0.3)
+  maxTokens        Int       @default(4096) @map("max_tokens")
+  minQualityGate   Int       @default(75) @map("min_quality_gate")
+  strictFactCheck  Boolean   @default(true) @map("strict_fact_check")
+  totalRequests    Int       @default(0) @map("total_requests")
+  totalTokensUsed  Int       @default(0) @map("total_tokens_used")
+  dailyTokenLimit  Int       @default(250000) @map("daily_token_limit")
+  updatedAt        DateTime  @default(now()) @map("updated_at")
+  workspace        Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@map("ai_settings")
+}
+
+model UpdateReport {
+  id                String    @id @default(uuid())
+  workspaceId       String    @map("workspace_id")
+  blogId            String    @map("blog_id")
+  articleId         String    @map("article_id")
+  revisionId        String?   @map("revision_id")
+  bloggerPostId     String?   @map("blogger_post_id")
+  actionTaken       String    @map("action_taken") // updated | skipped | failed | manual_review | rolled_back | published_new
+  detectionStatus   String    @map("detection_status")
+  decisionReason    String    @map("decision_reason")
+  beforeScore       Int       @default(0) @map("before_score")
+  afterScore        Int       @default(0) @map("after_score")
+  urlPreserved      Boolean   @default(true) @map("url_preserved")
+  postIdPreserved   Boolean   @default(true) @map("post_id_preserved")
+  verifiedViaApi    Boolean   @default(false) @map("verified_via_api")
+  createdAt         DateTime  @default(now()) @map("created_at")
+  workspace         Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  blog              Blog      @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  article           Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@map("update_reports")
+}
+
+model SourceReference {
+  id             String   @id @default(uuid())
+  articleId      String   @map("article_id")
+  title          String
+  url            String
+  publisher      String?
+  publishedDate  String?  @map("published_date")
+  claimSupported String   @map("claim_supported")
+  verified       Boolean  @default(true)
+  createdAt      DateTime @default(now()) @map("created_at")
+  article        Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  @@map("source_references")
+}

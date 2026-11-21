@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panduan Bergambar Lengkap — Nusa Blogger Automation</title>
+<style>
+  :root {
+    --primary: #0f5c59;
+    --primary-light: #14b8a6;
+    --dark: #0f172a;
+    --dark-surface: #1e293b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --text-muted: #64748b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .header {
+    background: linear-gradient(135deg, #09131f 0%, #0f5c59 100%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .header .badge {
+    display: inline-block;
+    background: rgba(45, 212, 191, 0.18);
+    color: #2dd4bf;
+    border: 1px solid rgba(45, 212, 191, 0.4);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    margin: 0 auto;
+    max-width: 680px;
+    color: #cbd5e1;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: -24px auto 40px;
+    padding: 0 20px;
+  }
+  .nav-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: 1px solid var(--border);
+  }
+  .nav-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(15, 92, 89, 0.08);
+    transition: all 0.2s;
+  }
+  .nav-card a:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+  .step-box {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    margin-bottom: 36px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .step-head {
+    padding: 18px 24px;
+    background: #f1f5f9;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .step-num {
+    width: 34px;
+    height: 34px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .step-head h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--dark);
+  }
+  .step-body {
+    padding: 24px;
+  }
+  .img-frame {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #0f172a;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+  .img-frame img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .instructions {
+    background: #f8fafc;
+    border-left: 4px solid var(--primary-light);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 16px;
+  }
+  .instructions h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: var(--primary);
+  }
+  .instructions ol, .instructions ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .instructions li {
+    margin-bottom: 6px;
+    font-size: 13.5px;
+  }
+  .code-pill {
+    background: #e2e8f0;
+    color: #0f172a;
+    font-family: Consolas, monospace;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .badge-green {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .badge-blue {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .badge-orange {
+    background: #ffedd5;
+    color: #c2410c;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <span class="badge">NUSA BLOGGER AUTOMATION V1.0</span>
+  <h1>📸 Panduan Bergambar &amp; Alur Kerja Terpadu</h1>
+  <p>Panduan visual interaktif lengkap dengan tangkapan layar asli untuk mengaktifkan Auto-Refresh Token Permanen, konfigurasi AI, hingga eksekusi Master Pipeline 10-Tahap.</p>
+</header>
+
+<div class="container">
+  <div class="nav-card">
+    <a href="#step1">1. Dashboard Utama</a>
+    <a href="#step2">2. Pengaturan OpenAI</a>
+    <a href="#step3">3. OAuth Playground (Step 1)</a>
+    <a href="#step4">4. Refresh Token (Step 2)</a>
+    <a href="#step5">5. Google Cloud Console</a>
+    <a href="#step6">6. Blog Management &amp; Pipeline</a>
+  </div>
+
+  <!-- STEP 1: DASHBOARD -->
+  <div class="step-box" id="step1">
+    <div class="step-head">
+      <div class="step-num">1</div>
+      <div>
+        <h2>Tampilan Dashboard &amp; Indikator Utama</h2>
+        <span class="badge-blue">Tinjauan Sistem</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/01_dashboard_utama.png" alt="Dashboard Utama Nusa Blogger Automation" />
+      </div>
+      <div class="instructions">
+        <h3>Elemen Penting pada Gambar 1:</h3>
+        <ol>
+          <li><b>10 Kartu KPI Statistik:</b> Menampilkan total blog terhubung, jumlah artikel yang memiliki <code>blogger_post_id</code>, artikel yang perlu update, kuota AI, serta jadwal otomatis berikutnya.</li>
+          <li><b>Tombol Hijau Kanan Atas (<code>▶ Jalankan Pipeline Otomatis</code>):</b> Tombol eksekusi sekali klik untuk menjalankan seluruh siklus otomatis (Sync &rarr; Deteksi &rarr; Revisi AI &rarr; Quality Gate &rarr; Update Blogspot).</li>
+          <li><b>Indikator Zona Waktu:</b> Seluruh jadwal dan riwayat pembaruan berjalan akurat dalam zona waktu <b>WIB (Asia/Jakarta)</b>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: SETTINGS OPENAI -->
+  <div class="step-box" id="step2">
+    <div class="step-head">
+      <div class="step-num">2</div>
+      <div>
+        <h2>Konfigurasi AI Engine (Menu Settings)</h2>
+        <span class="badge-green">Kredensial AI Terenkripsi</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/02_settings_openai.png" alt="Pengaturan OpenAI API di Nusa Blogger Automation" />
+      </div>
+      <div class="instructions">
+        <h3>Cara Mengatur Kredensial AI:</h3>
+        <ol>
+          <li>Klik menu <b>Settings</b> di bagian paling bawah sidebar kiri.</li>
+          <li><b>Model AI:</b> Pilih <span class="code-pill">gpt-4o-mini</span> (sangat cepat, hemat biaya, dan responsif) atau <span class="code-pill">gpt-4o</span>.</li>
+          <li><b>OpenAI API Key:</b> Masukkan kunci rahasia OpenAI Anda yang diawali kode <span class="code-pill">sk-proj-...</span>. Kunci otomatis dienkripsi dengan standar militer AES-256-GCM.</li>
+          <li><b>Skor Minimum Quality Gate:</b> Tetapkan angka <b>75</b> (standar ketat agar artikel yang lolos berkualitas tinggi dan bebas halusinasi).</li>
+          <li>Klik tombol biru <b>Simpan Pengaturan AI</b>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: OAUTH STEP 1 -->
+  <div class="step-box" id="step3">
+    <div class="step-head">
+      <div class="step-num">3</div>
+      <div>
+        <h2>Google OAuth Playground (Langkah 1: Memilih Scope Blogger)</h2>
+        <span class="badge-orange">Otorisasi API Google</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/03_oauth_step1_scope.png" alt="OAuth Playground Step 1 Memilih Scope Blogger" />
+      </div>
+      <div class="instructions">
+        <h3>Panduan di Google OAuth 2.0 Playground:</h3>
+        <ol>
+          <li>Buka browser dan kunjungi: <span class="code-pill">https://developers.google.com/oauthplayground</span></li>
+          <li>Pada kolom <b>Step 1 Select &amp; authorize APIs</b> di sebelah kiri, cari <b>Blogger API v3</b>.</li>
+          <li>Centang scope resmi: <span class="code-pill">https://www.googleapis.com/auth/blogger</span></li>
+          <li>Klik tombol biru besar: <b>Authorize APIs</b>.</li>
+          <li>Pilih akun Google Anda (misalnya <code>bangsalmu@gmail.com</code>), lalu klik <b>Lanjutkan / Izinkan (Allow)</b>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: OAUTH STEP 2 (REFRESH TOKEN) -->
+  <div class="step-box" id="step4">
+    <div class="step-head">
+      <div class="step-num">4</div>
+      <div>
+        <h2>Menyalin Refresh Token &amp; Access Token (Langkah 2)</h2>
+        <span class="badge-green">Kunci Auto-Refresh Permanen</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/04_oauth_step2_tokens.png" alt="OAuth Playground Step 2 Menampilkan Refresh Token" />
+      </div>
+      <div class="instructions">
+        <h3>Bagian Paling Penting (Perhatikan Kotak Token):</h3>
+        <ol>
+          <li><b>Refresh Token (KODE SAKTI PERMANEN):</b> Salin kode yang diawali <span class="code-pill">1//04MVBX8zNG_...</span>. Kode ini <b>TIDAK PERNAH MATI</b> dan merupakan kunci agar aplikasi bisa auto-refresh selamanya tanpa perlu Anda sentuh lagi!</li>
+          <li><b>Access Token (KODE 1 JAM):</b> Kode yang diawali <span class="code-pill">ya29...</span> ini hanya bertahan 3600 detik (1 jam).</li>
+          <li><b>Tombol Abu-Abu "Refresh access token":</b> Jika ingin menguji perpanjangan instan, klik tombol ini dan Access Token akan langsung terbarui dengan masa aktif 1 jam baru.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5: GOOGLE CLOUD CREDENTIALS -->
+  <div class="step-box" id="step5">
+    <div class="step-head">
+      <div class="step-num">5</div>
+      <div>
+        <h2>Google Cloud Console (Client ID &amp; Client Secret)</h2>
+        <span class="badge-blue">Kredensial OAuth Web Client</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/05_google_cloud_credentials.png" alt="Google Cloud Console OAuth Client ID" />
+      </div>
+      <div class="instructions">
+        <h3>Cara Mengambil Client ID &amp; Client Secret:</h3>
+        <ol>
+          <li>Buka <b>Google Cloud Console &rarr; APIs &amp; Services &rarr; Credentials</b>.</li>
+          <li>Pada bagian <b>OAuth 2.0 Client IDs</b>, temukan kredensial Web Application Anda:
+            <br /><b>Client ID:</b> <span class="code-pill">588669488177-nf5er8gqqph7ocg7jc2a8c0uik1jnnh8.apps.googleusercontent.com</span>
+          </li>
+          <li>Klik ikon pensil (edit) atau ikon unduh JSON untuk melihat <b>Client Secret</b> (diawali kode <span class="code-pill">GOCSPX-...</span>).</li>
+          <li><b>Masukkan 3 data ini ke menu Blogger Accounts aplikasi Nusa Blogger:</b>
+            <br />&bull; Client ID
+            <br />&bull; Client Secret
+            <br />&bull; Refresh Token (dari Langkah 4)
+            <br />&rarr; Klik tombol hijau: <b>+ Simpan Akun &amp; Kredensial</b>. Status akun langsung menjadi <span class="badge-green">⚡ Auto-Refresh Aktif</span>!
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 6: BLOG MANAGEMENT & PIPELINE -->
+  <div class="step-box" id="step6">
+    <div class="step-head">
+      <div class="step-num">6</div>
+      <div>
+        <h2>Blog Management &amp; Eksekusi Master Pipeline</h2>
+        <span class="badge-green">Otomasi Berjalan Sempurna</span>
+      </div>
+    </div>
+    <div class="step-body">
+      <div class="img-frame">
+        <img src="images/06_blog_management_pipeline.png" alt="Blog Management dan Eksekusi Pipeline Otomatis" />
+      </div>
+      <div class="instructions">
+        <h3>Menjalankan Pipeline Otomatis:</h3>
+        <ol>
+          <li>Daftar blogspot Anda (<code>blackphoneva</code> dan <code>isholidays</code>) sudah tersambung dan artikelnya tersimpan aman di database lokal.</li>
+          <li>Klik tombol hijau di sudut kanan atas: <b>`▶ Jalankan Pipeline Otomatis`</b>.</li>
+          <li><b>Apa yang terjadi di balik layar:</b>
+            <br />1. Sistem menyinkronkan postingan terbaru dari Blogspot via Blogger API v3.
+            <br />2. Detection Engine menganalisis tahun kedaluwarsa, duplikasi, dan SEO.
+            <br />3. AI Revision Engine (OpenAI) merevisi konten lama dengan anti-halusinasi &amp; FAQ.
+            <br />4. 10 Quality Gate memeriksa kelayakan revisi.
+            <br />5. Backup Snapshot otomatis disimpan sebelum konten disentuh.
+            <br />6. Publishing Engine mengirim update ke Blogspot via PATCH in-place (URL &amp; Post ID tetap utuh!).
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  &copy; 2026 Nusa Blogger Automation — Windows 11 Enterprise Edition. Dokumentasi Resmi.
+</footer>
+
+</body>
+</html>
